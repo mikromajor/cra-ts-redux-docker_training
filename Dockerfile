@@ -1,23 +1,12 @@
-# Start your image with a node base image
-FROM node:18-alpine
-
-# The /app directory should act as the main application directory
+#For bilding img and ran conteiner use:
+# docker-compose -f docker-compose.dev.yml up
+FROM node:16-alpine AS development
+ENV NODE_ENV development
 WORKDIR /app
-
-# Copy the app package and package-lock.json file
-COPY package*.json ./
-
-# Copy local directories to the current local directory of our docker image (/app)
+COPY package.json .
+RUN yarn install
 COPY ./src ./src
 COPY ./public ./public
-
-# Install node packages, install serve, build the app, and remove dependencies at the end
-RUN npm install \
-    && npm install -g serve \
-    && npm run build \
-    && rm -fr node_modules
-
+COPY . .
 EXPOSE 3000
-
-# Start the app using serve command
-CMD [ "npm","run","start:dev", "build" ]
+CMD [ "yarn", "start" ]
