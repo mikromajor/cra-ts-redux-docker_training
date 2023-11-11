@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 
 import {
   useAppSelector,
@@ -25,21 +26,25 @@ export function Counter() {
   return (
     <div>
       <div className={styles.row}>
-        <button
-          className={styles.button}
+        <Button
+          variant='contained'
+          color='secondary'
+          // className={styles.Button}
           aria-label='Decrement value'
           onClick={() => dispatch(decrement())}
         >
           -
-        </button>
+        </Button>
         <span className={styles.value}>{count}</span>
-        <button
-          className={styles.button}
+        <Button
+          variant='contained'
+          color='secondary'
+          // className={styles.Button}
           aria-label='Increment value'
           onClick={() => dispatch(increment())}
         >
           +
-        </button>
+        </Button>
       </div>
       <div className={styles.row}>
         <input
@@ -50,30 +55,31 @@ export function Counter() {
             setIncrementAmount(e.target.value)
           }
         />
-        <button
-          className={styles.button}
+        <Button
+          // color='success'
+          variant='contained'
           onClick={() =>
             dispatch(incrementByAmount(incrementValue))
           }
         >
           Add Amount
-        </button>
-        <button
-          className={styles.asyncButton}
+        </Button>
+        <Button
+          variant='contained'
           onClick={() =>
             dispatch(incrementAsync(incrementValue))
           }
         >
           Add Async
-        </button>
-        <button
-          className={styles.button}
+        </Button>
+        <Button
+          variant='contained'
           onClick={() =>
             dispatch(incrementIfOdd(incrementValue))
           }
         >
           Add If Odd
-        </button>
+        </Button>
       </div>
     </div>
   );

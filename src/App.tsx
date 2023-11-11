@@ -2,10 +2,14 @@
 // cd starter (your app's name)
 //npm install @reduxjs/toolkit
 //npm i node-sass
+//npm install @mui/material @emotion/react @emotion/styled
+//
+//
 import React from "react";
 import logo from "./logo.svg";
 import { Counter } from "./components";
 import "./App.css";
+import { Button, Typography } from "@mui/material";
 
 function App() {
   return (
@@ -55,6 +59,10 @@ function App() {
           </a>
         </span>
       </header>
+      <Typography variant='h2'> Material UI </Typography>
+      <Button color='primary'>my primary</Button>
+      <Button color='success'>success</Button>
+      <Button color='secondary'>my secondary</Button>
     </div>
   );
 }
