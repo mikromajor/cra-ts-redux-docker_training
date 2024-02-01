@@ -1,6 +1,7 @@
 {
-  "name": "starter",
+  "name": "training",
   "version": "0.2.0",
+  "author": "AlexSolianyk",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
