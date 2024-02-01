@@ -1,10 +1,9 @@
 //npx create-react-app my-app --template redux-typescript
 // cd starter (your app's name)
-//npm install @reduxjs/toolkit
-//npm i node-sass
 //npm install @mui/material @emotion/react @emotion/styled
 //
-//
+//npm i node-sass // it does not install
+
 import React from "react";
 import logo from "./logo.svg";
 import { Counter } from "./components";
